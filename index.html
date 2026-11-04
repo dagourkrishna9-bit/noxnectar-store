@@ -1,78 +1,295 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NOXNECTAR Perfumes | Luxury Fragrances</title>
 <meta name="description" content="Discover NOXNECTAR signature fragrances.">
 
 <style>
-:root{--bg:#0c0709;--gold:#e7c18a;--cream:#f7e9d5;--muted:#c9b9b0;--line:#55303a}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--cream);font-family:Georgia,serif}
-a{color:inherit;text-decoration:none}
-.top{text-align:center;background:#310b1c;padding:10px;font:12px Arial;color:#f3d7ad;letter-spacing:1px}
-nav{display:flex;align-items:center;justify-content:space-between;padding:12px 6%;background:#090608;border-bottom:1px solid #29151c;gap:20px}
-nav img{width:145px;height:100px;object-fit:contain}
-nav .links{display:flex;gap:25px;font:14px Arial}
-.hero{min-height:450px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:55px 8%;background:radial-gradient(ellipse at 75% 55%,#57152e,#200b14 45%,#0c0709 76%)}
-.eyebrow{letter-spacing:6px;color:var(--gold);font:12px Arial}
-.hero h1{font-size:clamp(42px,5vw,68px);line-height:1.03;font-weight:400;margin:18px 0}
-.hero p{font:17px/1.6 Arial;color:#e2cdbb}
-.bottle{margin:auto;width:250px;height:300px;border:2px solid #c18b65;border-radius:28px;background:linear-gradient(110deg,#10070b,#4a1028,#14080e);box-shadow:0 0 65px #a43b5b66;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;color:#f4d9b2}
-.bottle:before{content:"";position:absolute;top:-48px;width:95px;height:50px;border:3px solid #d8b078;border-radius:9px;background:linear-gradient(90deg,#6c451e,#f4d49a,#6c451e)}
-.bottle b{font-size:42px}
-.bottle small{letter-spacing:4px;text-align:center}
-.btn{display:inline-block;border-radius:30px;background:linear-gradient(100deg,#bd8a4b,#f3d7a4);color:#1b0c0d;padding:13px 22px;font:bold 13px Arial}
-.features{display:flex;justify-content:space-around;flex-wrap:wrap;gap:15px;padding:20px;background:#13090e;border-block:1px solid var(--line);font:13px Arial;color:#e8d3b5}
-section.products-wrap{padding:55px 4%;text-align:center}
-h2{font-size:34px;font-weight:400;margin:0 0 12px}
-.sub{font:14px Arial;color:var(--muted);margin-bottom:30px}
-.products{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.product{border:1px solid var(--line);border-radius:14px;background:linear-gradient(160deg,#1b0c12,#10090c);padding:14px 10px}
-.visual{height:155px;border-radius:10px;margin-bottom:14px;display:grid;place-items:center;background:radial-gradient(circle,#6d2a3c,#160b10 70%)}
-.mini{width:72px;height:112px;border:2px solid #c9a16d;border-radius:12px;background:linear-gradient(90deg,#09090d,#4c152c,#09090d);box-shadow:0 0 24px #a6536a55;display:grid;place-items:center;color:#e9c98f;font-size:10px;text-align:center}
-.product h3{font-size:17px;color:#f4d8ad;margin:0 0 7px}
-.product p{font:12px Arial;color:var(--muted);min-height:28px}
-.size{font:12px Arial;margin:10px}
-.price{font:bold 22px Arial;margin:8px}
-.product .btn{font-size:11px;padding:10px}
-.notice{font:12px/1.6 Arial;color:#d6bba4;background:#211017;border:1px solid #583044;padding:12px;border-radius:10px;max-width:900px;margin:22px auto}
-.discovery{margin:0 4% 55px;border:1px solid var(--line);border-radius:22px;padding:35px;background:linear-gradient(110deg,#260b19,#10070b);display:flex;align-items:center;justify-content:space-around;gap:25px}
-.discovery .symbol{font-size:55px;color:var(--gold)}
-.discovery p,.about p{font:14px/1.8 Arial;color:var(--muted)}
-.about{text-align:center;background:#13090e;padding:55px 8%;border-block:1px solid var(--line)}
-.about p{max-width:760px;margin:15px auto}
-footer{padding:35px 6%;background:#080507;display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px;font:13px/1.9 Arial;color:#cbbab1}
-footer h3{font:20px Georgia;color:#f0d6b0}
-footer a{display:block}
-.legal{text-align:center;padding:14px;font:11px/1.7 Arial;color:#927f78}
-
-@media(max-width:850px){
-.products{grid-template-columns:repeat(2,1fr)}
-.hero{grid-template-columns:1fr;text-align:center}
-.hero .bottle{margin-top:60px}
-nav{flex-direction:column}
-nav .links{flex-wrap:wrap;justify-content:center}
-footer{grid-template-columns:1fr 1fr}
+:root {
+  --bg:#0c0709;
+  --gold:#e7c18a;
+  --cream:#f7e9d5;
+  --muted:#c9b9b0;
+  --line:#55303a;
 }
-@media(max-width:520px){
-.products{grid-template-columns:1fr 1fr}
-.visual{height:120px}
-.mini{height:90px;width:58px}
-.discovery{flex-direction:column;text-align:center}
-footer{grid-template-columns:1fr}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--cream);
+  font-family:Georgia,serif;
+}
+a { color:inherit; text-decoration:none; }
+
+.top {
+  text-align:center;
+  background:#310b1c;
+  padding:10px;
+  font:12px Arial;
+  color:#f3d7ad;
+  letter-spacing:1px;
+}
+
+nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 6%;
+  background:#090608;
+  border-bottom:1px solid #29151c;
+  gap:20px;
+}
+nav img {
+  width:145px;
+  height:100px;
+  object-fit:contain;
+}
+nav .links {
+  display:flex;
+  gap:25px;
+  font:14px Arial;
+}
+nav .links a:hover { color:var(--gold); }
+
+.hero {
+  min-height:450px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:55px 8%;
+  background:radial-gradient(ellipse at 75% 55%,#57152e,#200b14 45%,#0c0709 76%);
+}
+.eyebrow {
+  letter-spacing:6px;
+  color:var(--gold);
+  font:12px Arial;
+}
+.hero h1 {
+  font-size:clamp(42px,5vw,68px);
+  line-height:1.03;
+  font-weight:400;
+  margin:18px 0;
+}
+.hero p {
+  font:17px/1.6 Arial;
+  color:#e2cdbb;
+}
+.bottle {
+  margin:auto;
+  width:250px;
+  height:300px;
+  border:2px solid #c18b65;
+  border-radius:28px;
+  background:linear-gradient(110deg,#10070b,#4a1028,#14080e);
+  box-shadow:0 0 65px #a43b5b66;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  color:#f4d9b2;
+}
+.bottle:before {
+  content:"";
+  position:absolute;
+  top:-48px;
+  width:95px;
+  height:50px;
+  border:3px solid #d8b078;
+  border-radius:9px;
+  background:linear-gradient(90deg,#6c451e,#f4d49a,#6c451e);
+}
+.bottle b { font-size:42px; }
+.bottle small {
+  letter-spacing:4px;
+  text-align:center;
+}
+
+.btn {
+  display:inline-block;
+  border-radius:30px;
+  background:linear-gradient(100deg,#bd8a4b,#f3d7a4);
+  color:#1b0c0d;
+  padding:13px 22px;
+  font:bold 13px Arial;
+}
+.btn:hover { opacity:.85; }
+
+.features {
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  gap:15px;
+  padding:20px;
+  background:#13090e;
+  border-block:1px solid var(--line);
+  font:13px Arial;
+  color:#e8d3b5;
+}
+
+.products-wrap {
+  padding:55px 4%;
+  text-align:center;
+}
+h2 {
+  font-size:34px;
+  font-weight:400;
+  margin:0 0 12px;
+}
+.sub {
+  font:14px Arial;
+  color:var(--muted);
+  margin-bottom:30px;
+}
+.products {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+.product {
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:linear-gradient(160deg,#1b0c12,#10090c);
+  padding:14px 10px;
+}
+.visual {
+  height:155px;
+  border-radius:10px;
+  margin-bottom:14px;
+  display:grid;
+  place-items:center;
+  background:radial-gradient(circle,#6d2a3c,#160b10 70%);
+}
+.mini {
+  width:72px;
+  height:112px;
+  border:2px solid #c9a16d;
+  border-radius:12px;
+  background:linear-gradient(90deg,#09090d,#4c152c,#09090d);
+  box-shadow:0 0 24px #a6536a55;
+  display:grid;
+  place-items:center;
+  color:#e9c98f;
+  font-size:10px;
+  text-align:center;
+}
+.product h3 {
+  font-size:17px;
+  color:#f4d8ad;
+  margin:0 0 7px;
+}
+.product p {
+  font:12px Arial;
+  color:var(--muted);
+  min-height:28px;
+}
+.size { font:12px Arial; margin:10px; }
+.price { font:bold 22px Arial; margin:8px; }
+.product .btn { font-size:11px; padding:10px; }
+
+.notice {
+  font:12px/1.6 Arial;
+  color:#d6bba4;
+  background:#211017;
+  border:1px solid #583044;
+  padding:12px;
+  border-radius:10px;
+  max-width:900px;
+  margin:22px auto;
+}
+
+.discovery {
+  margin:0 4% 55px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:35px;
+  background:linear-gradient(110deg,#260b19,#10070b);
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  gap:25px;
+}
+.discovery .symbol {
+  font-size:55px;
+  color:var(--gold);
+}
+.discovery p,.about p {
+  font:14px/1.8 Arial;
+  color:var(--muted);
+}
+
+.about {
+  text-align:center;
+  background:#13090e;
+  padding:55px 8%;
+  border-block:1px solid var(--line);
+}
+.about p {
+  max-width:760px;
+  margin:15px auto;
+}
+
+footer {
+  padding:35px 6%;
+  background:#080507;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:25px;
+  font:13px/1.9 Arial;
+  color:#cbbab1;
+}
+footer h3 {
+  font:20px Georgia;
+  color:#f0d6b0;
+}
+footer a { display:block; }
+footer a:hover { color:var(--gold); }
+
+.legal {
+  text-align:center;
+  padding:14px;
+  font:11px/1.7 Arial;
+  color:#927f78;
+}
+
+@media(max-width:850px) {
+  .products { grid-template-columns:repeat(2,1fr); }
+  .hero { grid-template-columns:1fr; text-align:center; }
+  .hero .bottle { margin-top:60px; }
+  nav { flex-direction:column; }
+  nav .links {
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  footer { grid-template-columns:1fr 1fr; }
+}
+
+@media(max-width:520px) {
+  .products { grid-template-columns:1fr 1fr; }
+  .visual { height:120px; }
+  .mini { height:90px; width:58px; }
+  .discovery {
+    flex-direction:column;
+    text-align:center;
+  }
+  footer { grid-template-columns:1fr; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="top">✦ SIGNATURE FRAGRANCES | PREMIUM PRESENTATION | MADE IN INDIA ✦</div>
+<div class="top">
+✦ SIGNATURE FRAGRANCES | PREMIUM PRESENTATION | MADE IN INDIA ✦
+</div>
 
 <nav>
-<a href="#"><img src="assets/noxnectar-logo.jpg" alt="NOXNECTAR Perfumes"></a>
+<a href="#">
+<img src="assets/noxnectar-logo.jpg" alt="NOXNECTAR Perfumes">
+</a>
 
 <div class="links">
 <a href="#">Home</a>
@@ -106,12 +323,16 @@ footer{grid-template-columns:1fr}
 
 <section class="products-wrap" id="shop">
 <h2>Our Signature Collection</h2>
-<div class="sub">Five unique fragrances. Five distinct personalities. Find your signature scent.</div>
+<div class="sub">
+Five unique fragrances. Five distinct personalities. Find your signature scent.
+</div>
 
 <div class="products">
 
 <div class="product">
-<div class="visual"><div class="mini">NOXNECTAR<br>OUD</div></div>
+<div class="visual">
+<div class="mini">NOXNECTAR<br>OUD</div>
+</div>
 <h3>OUD MAJESTY</h3>
 <p>Oud • Sandalwood • Royal</p>
 <div class="size">100 ml</div>
@@ -120,7 +341,9 @@ footer{grid-template-columns:1fr}
 </div>
 
 <div class="product">
-<div class="visual" style="background:radial-gradient(circle,#17354c,#10090c 70%)"><div class="mini">NOXNECTAR<br>NIGHT</div></div>
+<div class="visual" style="background:radial-gradient(circle,#17354c,#10090c 70%)">
+<div class="mini">NOXNECTAR<br>NIGHT</div>
+</div>
 <h3>NIGHT OUT</h3>
 <p>Fresh • Spicy • Party Wear</p>
 <div class="size">100 ml</div>
@@ -129,7 +352,9 @@ footer{grid-template-columns:1fr}
 </div>
 
 <div class="product">
-<div class="visual" style="background:radial-gradient(circle,#70203b,#10090c 70%)"><div class="mini">NOXNECTAR<br>LOVE</div></div>
+<div class="visual" style="background:radial-gradient(circle,#70203b,#10090c 70%)">
+<div class="mini">NOXNECTAR<br>LOVE</div>
+</div>
 <h3>SOULMATE</h3>
 <p>Romantic • Floral • Seductive</p>
 <div class="size">100 ml</div>
@@ -138,7 +363,9 @@ footer{grid-template-columns:1fr}
 </div>
 
 <div class="product">
-<div class="visual" style="background:radial-gradient(circle,#34404a,#10090c 70%)"><div class="mini">NOXNECTAR<br>NOIR</div></div>
+<div class="visual" style="background:radial-gradient(circle,#34404a,#10090c 70%)">
+<div class="mini">NOXNECTAR<br>NOIR</div>
+</div>
 <h3>DICTATOR</h3>
 <p>Bold • Woody • Confident</p>
 <div class="size">100 ml</div>
@@ -147,7 +374,9 @@ footer{grid-template-columns:1fr}
 </div>
 
 <div class="product">
-<div class="visual" style="background:radial-gradient(circle,#27482c,#10090c 70%)"><div class="mini">NOXNECTAR<br>AURA</div></div>
+<div class="visual" style="background:radial-gradient(circle,#27482c,#10090c 70%)">
+<div class="mini">NOXNECTAR<br>AURA</div>
+</div>
 <h3>AURA</h3>
 <p>Fresh • Clean • Everyday</p>
 <div class="size">100 ml</div>
@@ -167,14 +396,19 @@ Online checkout and UPI/card payments are not enabled yet. Product enquiries are
 <div>
 <div class="eyebrow">DISCOVERY BOX</div>
 <h2>Try All 5 Fragrances</h2>
-<p>NOXNECTAR Discovery Box · 5 × 8 ml<br>Ask us for current availability and pricing.</p>
+<p>
+NOXNECTAR Discovery Box · 5 × 8 ml<br>
+Ask us for current availability and pricing.
+</p>
 <a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20the%20NOXNECTAR%20Discovery%20Box">Enquire Now →</a>
 </div>
 </section>
 
 <section class="about" id="about">
 <h2>About NOXNECTAR</h2>
-<p>NOXNECTAR is a fragrance brand built around expressive scents, refined presentation and accessible luxury. Explore the collection and contact our team for product details, availability and ordering assistance.</p>
+<p>
+NOXNECTAR is a fragrance brand built around expressive scents, refined presentation and accessible luxury. Explore the collection and contact our team for product details, availability and ordering assistance.
+</p>
 </section>
 
 <footer id="contact">
