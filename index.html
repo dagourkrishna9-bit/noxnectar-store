@@ -14,14 +14,17 @@
   --muted:#c9b9b0;
   --line:#55303a;
 }
+
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
+
 body {
   margin:0;
   background:var(--bg);
   color:var(--cream);
   font-family:Georgia,serif;
 }
+
 a { color:inherit; text-decoration:none; }
 
 .top {
@@ -42,16 +45,19 @@ nav {
   border-bottom:1px solid #29151c;
   gap:20px;
 }
+
 nav img {
   width:145px;
   height:100px;
   object-fit:contain;
 }
+
 nav .links {
   display:flex;
   gap:25px;
   font:14px Arial;
 }
+
 nav .links a:hover { color:var(--gold); }
 
 .hero {
@@ -62,21 +68,25 @@ nav .links a:hover { color:var(--gold); }
   padding:55px 8%;
   background:radial-gradient(ellipse at 75% 55%,#57152e,#200b14 45%,#0c0709 76%);
 }
+
 .eyebrow {
   letter-spacing:6px;
   color:var(--gold);
   font:12px Arial;
 }
+
 .hero h1 {
   font-size:clamp(42px,5vw,68px);
   line-height:1.03;
   font-weight:400;
   margin:18px 0;
 }
+
 .hero p {
   font:17px/1.6 Arial;
   color:#e2cdbb;
 }
+
 .bottle {
   margin:auto;
   width:250px;
@@ -92,6 +102,7 @@ nav .links a:hover { color:var(--gold); }
   position:relative;
   color:#f4d9b2;
 }
+
 .bottle:before {
   content:"";
   position:absolute;
@@ -102,7 +113,9 @@ nav .links a:hover { color:var(--gold); }
   border-radius:9px;
   background:linear-gradient(90deg,#6c451e,#f4d49a,#6c451e);
 }
+
 .bottle b { font-size:42px; }
+
 .bottle small {
   letter-spacing:4px;
   text-align:center;
@@ -116,6 +129,7 @@ nav .links a:hover { color:var(--gold); }
   padding:13px 22px;
   font:bold 13px Arial;
 }
+
 .btn:hover { opacity:.85; }
 
 .features {
@@ -134,27 +148,32 @@ nav .links a:hover { color:var(--gold); }
   padding:55px 4%;
   text-align:center;
 }
+
 h2 {
   font-size:34px;
   font-weight:400;
   margin:0 0 12px;
 }
+
 .sub {
   font:14px Arial;
   color:var(--muted);
   margin-bottom:30px;
 }
+
 .products {
   display:grid;
   grid-template-columns:repeat(5,1fr);
   gap:14px;
 }
+
 .product {
   border:1px solid var(--line);
   border-radius:14px;
   background:linear-gradient(160deg,#1b0c12,#10090c);
   padding:14px 10px;
 }
+
 .visual {
   height:155px;
   border-radius:10px;
@@ -163,6 +182,7 @@ h2 {
   place-items:center;
   background:radial-gradient(circle,#6d2a3c,#160b10 70%);
 }
+
 .mini {
   width:72px;
   height:112px;
@@ -176,19 +196,33 @@ h2 {
   font-size:10px;
   text-align:center;
 }
+
 .product h3 {
   font-size:17px;
   color:#f4d8ad;
   margin:0 0 7px;
 }
+
 .product p {
   font:12px Arial;
   color:var(--muted);
   min-height:28px;
 }
-.size { font:12px Arial; margin:10px; }
-.price { font:bold 22px Arial; margin:8px; }
-.product .btn { font-size:11px; padding:10px; }
+
+.size {
+  font:12px Arial;
+  margin:10px;
+}
+
+.price {
+  font:bold 22px Arial;
+  margin:8px;
+}
+
+.product .btn {
+  font-size:11px;
+  padding:10px;
+}
 
 .notice {
   font:12px/1.6 Arial;
@@ -212,10 +246,12 @@ h2 {
   justify-content:space-around;
   gap:25px;
 }
+
 .discovery .symbol {
   font-size:55px;
   color:var(--gold);
 }
+
 .discovery p,.about p {
   font:14px/1.8 Arial;
   color:var(--muted);
@@ -227,6 +263,7 @@ h2 {
   padding:55px 8%;
   border-block:1px solid var(--line);
 }
+
 .about p {
   max-width:760px;
   margin:15px auto;
@@ -241,11 +278,14 @@ footer {
   font:13px/1.9 Arial;
   color:#cbbab1;
 }
+
 footer h3 {
   font:20px Georgia;
   color:#f0d6b0;
 }
+
 footer a { display:block; }
+
 footer a:hover { color:var(--gold); }
 
 .legal {
@@ -287,6 +327,7 @@ footer a:hover { color:var(--gold); }
 </div>
 
 <nav>
+
 <a href="#">
 <img src="assets/noxnectar-logo.jpg" alt="NOXNECTAR Perfumes">
 </a>
@@ -298,13 +339,21 @@ footer a:hover { color:var(--gold); }
 <a href="#about">About Us</a>
 <a href="#contact">Contact</a>
 </div>
+
 </nav>
 
 <header class="hero">
+
 <div>
 <div class="eyebrow">N O X N E C T A R</div>
+
 <h1>Luxury Fragrance<br>For Modern You</h1>
-<p>Discover your signature scent. A collection designed to make every moment memorable.</p>
+
+<p>
+Discover your signature scent.
+A collection designed to make every moment memorable.
+</p>
+
 <a class="btn" href="#shop">Explore Collection →</a>
 </div>
 
@@ -312,6 +361,7 @@ footer a:hover { color:var(--gold); }
 <b>Ｎ</b>
 <small>NOXNECTAR<br>PERFUMES</small>
 </div>
+
 </header>
 
 <div class="features">
@@ -322,7 +372,9 @@ footer a:hover { color:var(--gold); }
 </div>
 
 <section class="products-wrap" id="shop">
+
 <h2>Our Signature Collection</h2>
+
 <div class="sub">
 Five unique fragrances. Five distinct personalities. Find your signature scent.
 </div>
@@ -387,34 +439,54 @@ Five unique fragrances. Five distinct personalities. Find your signature scent.
 </div>
 
 <div class="notice">
-Online checkout and UPI/card payments are not enabled yet. Product enquiries are handled through WhatsApp while payment-gateway approval is pending.
+Online checkout and UPI/card payments are not enabled yet.
+Product enquiries are handled through WhatsApp while payment-gateway approval is pending.
 </div>
+
 </section>
 
 <section class="discovery" id="discovery">
+
 <div class="symbol">✦ ✦ ✦</div>
+
 <div>
 <div class="eyebrow">DISCOVERY BOX</div>
+
 <h2>Try All 5 Fragrances</h2>
+
 <p>
 NOXNECTAR Discovery Box · 5 × 8 ml<br>
 Ask us for current availability and pricing.
 </p>
-<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20the%20NOXNECTAR%20Discovery%20Box">Enquire Now →</a>
+
+<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20the%20NOXNECTAR%20Discovery%20Box">
+Enquire Now →
+</a>
 </div>
+
 </section>
 
 <section class="about" id="about">
+
 <h2>About NOXNECTAR</h2>
+
 <p>
-NOXNECTAR is a fragrance brand built around expressive scents, refined presentation and accessible luxury. Explore the collection and contact our team for product details, availability and ordering assistance.
+NOXNECTAR is a fragrance brand built around expressive scents,
+refined presentation and accessible luxury.
+Explore the collection and contact our team for product details,
+availability and ordering assistance.
 </p>
+
 </section>
 
 <footer id="contact">
+
 <div>
 <h3>NOXNECTAR PERFUMES</h3>
-<p>Luxury fragrance for modern you.<br>Brand enquiries and order assistance.</p>
+<p>
+Luxury fragrance for modern you.<br>
+Brand enquiries and order assistance.
+</p>
 </div>
 
 <div>
@@ -429,6 +501,7 @@ NOXNECTAR is a fragrance brand built around expressive scents, refined presentat
 <a href="https://wa.me/918817861887">WhatsApp: +91 88178 61887</a>
 <a href="mailto:contact@noxnectar.in">contact@noxnectar.in</a>
 </div>
+
 </footer>
 
 <div class="legal">
