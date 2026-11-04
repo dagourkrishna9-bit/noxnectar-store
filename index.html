@@ -1,262 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f8eee9">
-<title>NOXNECTAR | The Art of Fragrance</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOXNECTAR Perfumes | Luxury Fragrances</title>
+<meta name="description" content="Discover NOXNECTAR signature fragrances.">
+
 <style>
-:root{--cream:#fbf4ef;--paper:#fffaf7;--ink:#2c1718;--muted:#826d68;--rose:#bd8174;--line:#eadbd4}
+:root{--bg:#0c0709;--gold:#e7c18a;--cream:#f7e9d5;--muted:#c9b9b0;--line:#55303a}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,serif}
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-.topbar{background:#351f20;color:white;text-align:center;padding:12px;font:10px Arial;letter-spacing:2px}
-.nav{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:#fffaf7;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
-.brand{text-align:center;line-height:1}
-.brand-mark{font-size:27px;color:#8e554e}
-.brand-name{font-size:17px;letter-spacing:3px;margin-top:4px}
-.brand-tag{font:8px Arial;letter-spacing:2px;color:var(--muted);margin-top:5px}
-.iconbtn{border:0;background:none;color:var(--ink);font-size:22px;position:relative}
-.count{position:absolute;top:-5px;right:-8px;background:var(--rose);color:white;border-radius:50%;font:10px Arial;min-width:17px;height:17px;display:grid;place-items:center}
-.hero{min-height:490px;padding:35px 22px 25px;background:linear-gradient(135deg,#f9e7df,#fff8f4 55%,#e9c9bd);display:flex;flex-direction:column;justify-content:space-between}
-.eyebrow{font:10px Arial;letter-spacing:3px;color:#94685f}
-.hero h1{font-size:clamp(39px,11vw,58px);line-height:1.02;font-weight:normal;margin:18px 0}
-.hero p{font:14px/1.7 Arial;color:#624b47;max-width:260px}
-.hero-art{height:220px;display:flex;justify-content:center;align-items:center;position:relative}
-.hero-art:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,#fff9f5 0,#e9bfb1 65%,transparent 66%)}
-.bottle{width:118px;height:166px;border-radius:17px 17px 12px 12px;background:linear-gradient(90deg,#75402d,#d28b58,#492820);box-shadow:0 20px 30px #6f453344;position:relative;z-index:1;border:2px solid #e9c7a4}
-.bottle:before{content:"";position:absolute;width:48px;height:35px;top:-37px;left:33px;background:linear-gradient(90deg,#171313,#51403d,#111);border-radius:5px}
-.bottle:after{content:"NOXNECTAR\A OUD MAJESTY";white-space:pre;position:absolute;inset:52px 8px auto;text-align:center;color:#f8e8d5;font-size:10px;line-height:1.8}
-.btn{border:0;border-radius:3px;background:linear-gradient(110deg,#b77b6d,#d7a091);color:white;padding:14px 20px;font:11px Arial;letter-spacing:1.5px;text-transform:uppercase;display:inline-block;text-decoration:none}
-.section{padding:36px 17px}
-.section-head{text-align:center;margin-bottom:22px}
-.section-head small{font:9px Arial;letter-spacing:3px;color:var(--rose)}
-.section-head h2{font-size:29px;font-weight:normal;margin:9px 0}
-.section-head p{font:12px Arial;color:var(--muted)}
-.chips{display:flex;gap:8px;overflow:auto;padding-bottom:16px}
-.chip{white-space:nowrap;border:1px solid var(--line);border-radius:20px;background:transparent;padding:8px 15px;font:11px Arial;color:var(--muted)}
-.chip.active{background:#4b2928;color:white}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-.product{background:#fffaf7;border:1px solid var(--line);padding:9px;border-radius:5px}
-.product-art{height:160px;background:linear-gradient(145deg,#f6e6df,#fff7f2);display:grid;place-items:center;position:relative}
-.product-art:before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;background:#f0d4ca}
-.mini-bottle{z-index:1;width:66px;height:100px;border-radius:9px;background:linear-gradient(90deg,#38201c,#bd8054,#563027);position:relative;box-shadow:0 10px 16px #51302c33}
-.mini-bottle:before{content:"";position:absolute;width:28px;height:23px;top:-24px;left:18px;background:#29201d;border-radius:3px}
-.mini-bottle:after{content:"NOXNECTAR";position:absolute;top:42px;left:0;right:0;text-align:center;color:#f7e7d5;font:6px Georgia}
-.tone-1{background:linear-gradient(90deg,#281d1a,#6b3326,#291b18)}
-.tone-2{background:linear-gradient(90deg,#51201f,#a74c3f,#431a1c)}
-.tone-3{background:linear-gradient(90deg,#8b5b49,#d69a80,#764638)}
-.tone-4{background:linear-gradient(90deg,#151515,#4c4540,#171717)}
-.tone-5{background:linear-gradient(90deg,#656039,#b7a36a,#4a482e)}
-.product h3{font-size:15px;font-weight:normal;margin:12px 0 4px}
-.sub{font:10px Arial;color:var(--muted);min-height:25px}
-.price{font:bold 14px Arial;margin:9px 0}
-.product-actions{display:flex;gap:6px}
-.product-actions select{min-width:0;flex:1;border:1px solid var(--line);background:white;padding:8px 3px;font:10px Arial}
-.add{border:0;background:#4b2928;color:white;padding:9px 10px;font:10px Arial}
-.features{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px 12px;background:#fffaf7;border-block:1px solid var(--line);text-align:center}
-.features div{font:10px Arial;color:var(--muted)}
-.features b{display:block;font-size:19px;margin-bottom:7px;color:var(--rose)}
-.about{background:#f2e2da;text-align:center;padding:36px 25px}
-.about h2{font-size:27px;font-weight:normal}
-.about p{font:13px/1.8 Arial;color:#715d57}
-.footer{padding:30px 20px;background:#321f20;color:#f8e9e2;text-align:center}
-.footer p{font:11px/1.8 Arial;color:#d8c1b8}
-.footer a{color:#f1c6b5}
-.cart-panel{position:fixed;inset:0;background:#0007;z-index:30;display:none}
-.cart-panel.open{display:block}
-.drawer{position:absolute;right:0;top:0;height:100%;width:min(420px,92vw);background:var(--paper);padding:20px;overflow:auto}
-.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
-.drawer h2{font-weight:normal}
-.close{border:0;background:none;font-size:25px}
-.cart-row{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}
-.cart-thumb{width:58px;height:70px;background:#f1ddd4;display:grid;place-items:center}
-.cart-info{flex:1;font:12px Arial}
-.cart-info strong{display:block;margin-bottom:5px}
-.qty{display:flex;align-items:center;gap:12px;margin-top:8px}
-.qty button{border:1px solid var(--line);background:white;width:25px;height:25px}
-.total{display:flex;justify-content:space-between;font:bold 16px Arial;padding:18px 0}
-.checkout label{display:block;font:11px Arial;margin:12px 0 5px}
-.checkout input,.checkout textarea{width:100%;padding:12px;border:1px solid var(--line);background:white;border-radius:3px;font:13px Arial}
-.checkout textarea{min-height:65px}
-.checkout .btn{width:100%;margin-top:15px}
-.note{font:10px/1.5 Arial;color:var(--muted);margin-top:12px}
-.empty{text-align:center;color:var(--muted);padding:40px 10px;font:13px Arial}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#321f20;color:white;padding:12px 18px;border-radius:30px;font:12px Arial;z-index:50;display:none}
-.toast.show{display:block}
-@media(min-width:700px){
-.hero{min-height:570px;padding:55px 8%;display:grid;grid-template-columns:1fr 1fr;align-items:center}
-.hero-art{height:390px}
-.hero-art .bottle{transform:scale(1.7)}
-.section{max-width:1100px;margin:auto;padding:55px 25px}
-.grid{grid-template-columns:repeat(5,1fr)}
-.product-art{height:190px}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:Georgia,serif}
+a{color:inherit;text-decoration:none}
+.top{text-align:center;background:#310b1c;padding:10px;font:12px Arial;color:#f3d7ad;letter-spacing:1px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:12px 6%;background:#090608;border-bottom:1px solid #29151c;gap:20px}
+nav img{width:145px;height:100px;object-fit:contain}
+nav .links{display:flex;gap:25px;font:14px Arial}
+.hero{min-height:450px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:55px 8%;background:radial-gradient(ellipse at 75% 55%,#57152e,#200b14 45%,#0c0709 76%)}
+.eyebrow{letter-spacing:6px;color:var(--gold);font:12px Arial}
+.hero h1{font-size:clamp(42px,5vw,68px);line-height:1.03;font-weight:400;margin:18px 0}
+.hero p{font:17px/1.6 Arial;color:#e2cdbb}
+.bottle{margin:auto;width:250px;height:300px;border:2px solid #c18b65;border-radius:28px;background:linear-gradient(110deg,#10070b,#4a1028,#14080e);box-shadow:0 0 65px #a43b5b66;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;color:#f4d9b2}
+.bottle:before{content:"";position:absolute;top:-48px;width:95px;height:50px;border:3px solid #d8b078;border-radius:9px;background:linear-gradient(90deg,#6c451e,#f4d49a,#6c451e)}
+.bottle b{font-size:42px}
+.bottle small{letter-spacing:4px;text-align:center}
+.btn{display:inline-block;border-radius:30px;background:linear-gradient(100deg,#bd8a4b,#f3d7a4);color:#1b0c0d;padding:13px 22px;font:bold 13px Arial}
+.features{display:flex;justify-content:space-around;flex-wrap:wrap;gap:15px;padding:20px;background:#13090e;border-block:1px solid var(--line);font:13px Arial;color:#e8d3b5}
+section.products-wrap{padding:55px 4%;text-align:center}
+h2{font-size:34px;font-weight:400;margin:0 0 12px}
+.sub{font:14px Arial;color:var(--muted);margin-bottom:30px}
+.products{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.product{border:1px solid var(--line);border-radius:14px;background:linear-gradient(160deg,#1b0c12,#10090c);padding:14px 10px}
+.visual{height:155px;border-radius:10px;margin-bottom:14px;display:grid;place-items:center;background:radial-gradient(circle,#6d2a3c,#160b10 70%)}
+.mini{width:72px;height:112px;border:2px solid #c9a16d;border-radius:12px;background:linear-gradient(90deg,#09090d,#4c152c,#09090d);box-shadow:0 0 24px #a6536a55;display:grid;place-items:center;color:#e9c98f;font-size:10px;text-align:center}
+.product h3{font-size:17px;color:#f4d8ad;margin:0 0 7px}
+.product p{font:12px Arial;color:var(--muted);min-height:28px}
+.size{font:12px Arial;margin:10px}
+.price{font:bold 22px Arial;margin:8px}
+.product .btn{font-size:11px;padding:10px}
+.notice{font:12px/1.6 Arial;color:#d6bba4;background:#211017;border:1px solid #583044;padding:12px;border-radius:10px;max-width:900px;margin:22px auto}
+.discovery{margin:0 4% 55px;border:1px solid var(--line);border-radius:22px;padding:35px;background:linear-gradient(110deg,#260b19,#10070b);display:flex;align-items:center;justify-content:space-around;gap:25px}
+.discovery .symbol{font-size:55px;color:var(--gold)}
+.discovery p,.about p{font:14px/1.8 Arial;color:var(--muted)}
+.about{text-align:center;background:#13090e;padding:55px 8%;border-block:1px solid var(--line)}
+.about p{max-width:760px;margin:15px auto}
+footer{padding:35px 6%;background:#080507;display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px;font:13px/1.9 Arial;color:#cbbab1}
+footer h3{font:20px Georgia;color:#f0d6b0}
+footer a{display:block}
+.legal{text-align:center;padding:14px;font:11px/1.7 Arial;color:#927f78}
+
+@media(max-width:850px){
+.products{grid-template-columns:repeat(2,1fr)}
+.hero{grid-template-columns:1fr;text-align:center}
+.hero .bottle{margin-top:60px}
+nav{flex-direction:column}
+nav .links{flex-wrap:wrap;justify-content:center}
+footer{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+.products{grid-template-columns:1fr 1fr}
+.visual{height:120px}
+.mini{height:90px;width:58px}
+.discovery{flex-direction:column;text-align:center}
+footer{grid-template-columns:1fr}
 }
 </style>
 </head>
+
 <body>
-<div class="topbar">A SIGNATURE SCENT FOR EVERY MOMENT</div>
-<header class="nav">
-<button class="iconbtn" onclick="document.getElementById('collection').scrollIntoView()">☰</button>
-<div class="brand">
-<div class="brand-mark">ℵ</div>
-<div class="brand-name">NOXNECTAR</div>
-<div class="brand-tag">THE ART OF FRAGRANCE</div>
+
+<div class="top">✦ SIGNATURE FRAGRANCES | PREMIUM PRESENTATION | MADE IN INDIA ✦</div>
+
+<nav>
+<a href="#"><img src="assets/noxnectar-logo.jpg" alt="NOXNECTAR Perfumes"></a>
+
+<div class="links">
+<a href="#">Home</a>
+<a href="#shop">Shop</a>
+<a href="#discovery">Discovery Box</a>
+<a href="#about">About Us</a>
+<a href="#contact">Contact</a>
 </div>
-<button class="iconbtn" onclick="toggleCart()">♧<span class="count" id="count">0</span></button>
-</header>
-<main>
-<section class="hero">
+</nav>
+
+<header class="hero">
 <div>
-<div class="eyebrow">DISCOVER YOUR SIGNATURE</div>
-<h1>A Fragrance<br>Beyond Moments</h1>
-<p>Crafted for those who leave a lasting impression. Find the scent that tells your story.</p>
-<a class="btn" href="#collection">Explore Collection →</a>
+<div class="eyebrow">N O X N E C T A R</div>
+<h1>Luxury Fragrance<br>For Modern You</h1>
+<p>Discover your signature scent. A collection designed to make every moment memorable.</p>
+<a class="btn" href="#shop">Explore Collection →</a>
 </div>
-<div class="hero-art"><div class="bottle"></div></div>
-</section>
+
+<div class="bottle">
+<b>Ｎ</b>
+<small>NOXNECTAR<br>PERFUMES</small>
+</div>
+</header>
+
 <div class="features">
-<div><b>◇</b>Premium<br>Fragrances</div>
-<div><b>♧</b>Everyday<br>Elegance</div>
-<div><b>♙</b>Perfect<br>For Gifting</div>
-<div><b>⌁</b>Secure<br>Ordering</div>
+<span>✧ Signature Fragrances</span>
+<span>✧ Premium Presentation</span>
+<span>✧ Secure Packaging</span>
+<span>✧ India Based Brand</span>
 </div>
-<section class="section" id="collection">
-<div class="section-head">
-<small>FIVE FRAGRANCES · FIVE STORIES</small>
+
+<section class="products-wrap" id="shop">
 <h2>Our Signature Collection</h2>
-<p>Discover your next favourite fragrance.</p>
+<div class="sub">Five unique fragrances. Five distinct personalities. Find your signature scent.</div>
+
+<div class="products">
+
+<div class="product">
+<div class="visual"><div class="mini">NOXNECTAR<br>OUD</div></div>
+<h3>OUD MAJESTY</h3>
+<p>Oud • Sandalwood • Royal</p>
+<div class="size">100 ml</div>
+<div class="price">₹999</div>
+<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20OUD%20MAJESTY">Enquire on WhatsApp</a>
 </div>
-<div class="chips">
-<button class="chip active" onclick="filterProducts('All',this)">All</button>
-<button class="chip" onclick="filterProducts('Oud',this)">Oud</button>
-<button class="chip" onclick="filterProducts('Fresh',this)">Fresh</button>
-<button class="chip" onclick="filterProducts('Woody',this)">Woody</button>
-<button class="chip" onclick="filterProducts('Floral',this)">Floral</button>
+
+<div class="product">
+<div class="visual" style="background:radial-gradient(circle,#17354c,#10090c 70%)"><div class="mini">NOXNECTAR<br>NIGHT</div></div>
+<h3>NIGHT OUT</h3>
+<p>Fresh • Spicy • Party Wear</p>
+<div class="size">100 ml</div>
+<div class="price">₹999</div>
+<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20NIGHT%20OUT">Enquire on WhatsApp</a>
 </div>
-<div class="grid" id="products"></div>
+
+<div class="product">
+<div class="visual" style="background:radial-gradient(circle,#70203b,#10090c 70%)"><div class="mini">NOXNECTAR<br>LOVE</div></div>
+<h3>SOULMATE</h3>
+<p>Romantic • Floral • Seductive</p>
+<div class="size">100 ml</div>
+<div class="price">₹999</div>
+<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20SOULMATE">Enquire on WhatsApp</a>
+</div>
+
+<div class="product">
+<div class="visual" style="background:radial-gradient(circle,#34404a,#10090c 70%)"><div class="mini">NOXNECTAR<br>NOIR</div></div>
+<h3>DICTATOR</h3>
+<p>Bold • Woody • Confident</p>
+<div class="size">100 ml</div>
+<div class="price">₹999</div>
+<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20DICTATOR">Enquire on WhatsApp</a>
+</div>
+
+<div class="product">
+<div class="visual" style="background:radial-gradient(circle,#27482c,#10090c 70%)"><div class="mini">NOXNECTAR<br>AURA</div></div>
+<h3>AURA</h3>
+<p>Fresh • Clean • Everyday</p>
+<div class="size">100 ml</div>
+<div class="price">₹999</div>
+<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20AURA">Enquire on WhatsApp</a>
+</div>
+
+</div>
+
+<div class="notice">
+Online checkout and UPI/card payments are not enabled yet. Product enquiries are handled through WhatsApp while payment-gateway approval is pending.
+</div>
 </section>
-<section class="about">
-<div class="eyebrow">THE NOXNECTAR PROMISE</div>
-<h2>Make Every Moment Memorable</h2>
-<p>Thoughtfully selected fragrances for your everyday rituals and special occasions. Choose your mood. Wear your story.</p>
+
+<section class="discovery" id="discovery">
+<div class="symbol">✦ ✦ ✦</div>
+<div>
+<div class="eyebrow">DISCOVERY BOX</div>
+<h2>Try All 5 Fragrances</h2>
+<p>NOXNECTAR Discovery Box · 5 × 8 ml<br>Ask us for current availability and pricing.</p>
+<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20the%20NOXNECTAR%20Discovery%20Box">Enquire Now →</a>
+</div>
 </section>
-</main>
-<footer class="footer">
-<div class="brand-name">NOXNECTAR</div>
-<p>THE ART OF FRAGRANCE</p>
-<p>Questions or orders? <a id="footerWhats" href="#">Chat with us on WhatsApp</a></p>
-<p>© 2026 NOXNECTAR. All rights reserved.</p>
+
+<section class="about" id="about">
+<h2>About NOXNECTAR</h2>
+<p>NOXNECTAR is a fragrance brand built around expressive scents, refined presentation and accessible luxury. Explore the collection and contact our team for product details, availability and ordering assistance.</p>
+</section>
+
+<footer id="contact">
+<div>
+<h3>NOXNECTAR PERFUMES</h3>
+<p>Luxury fragrance for modern you.<br>Brand enquiries and order assistance.</p>
+</div>
+
+<div>
+<h3>Explore</h3>
+<a href="#shop">Shop</a>
+<a href="#discovery">Discovery Box</a>
+<a href="#about">About Us</a>
+</div>
+
+<div>
+<h3>Contact</h3>
+<a href="https://wa.me/918817861887">WhatsApp: +91 88178 61887</a>
+<a href="mailto:contact@noxnectar.in">contact@noxnectar.in</a>
+</div>
 </footer>
-<div class="cart-panel" id="cartPanel" onclick="if(event.target===this)toggleCart()">
-<div class="drawer">
-<div class="drawer-head"><h2>Your Shopping Bag</h2><button class="close" onclick="toggleCart()">×</button></div>
-<div id="cartItems"></div>
-<div class="total"><span>Total</span><span id="cartTotal">₹0</span></div>
-<div class="checkout">
-<h3 style="font-weight:normal">Delivery Details</h3>
-<label>Full Name *</label><input id="custName" placeholder="Your name">
-<label>Mobile Number *</label><input id="custPhone" inputmode="numeric" maxlength="10" placeholder="10-digit mobile number">
-<label>Delivery Address *</label><textarea id="custAddress" placeholder="House / Street / Area, City, PIN code"></textarea>
-<button class="btn" onclick="sendOrder()">Place Order on WhatsApp</button>
-<p class="note">Order details will open in WhatsApp for confirmation. No online payment is collected on this demo storefront.</p>
+
+<div class="legal">
+© 2026 NOXNECTAR Perfumes. All rights reserved.<br>
+Terms & Conditions · Privacy Policy · Shipping Policy · Cancellation & Refund Policy<br>
+Catalogue and enquiry website. Product availability and prices are confirmed before order acceptance. Complete accurate legal disclosures and policies before enabling online payments.
 </div>
-</div>
-</div>
-<div class="toast" id="toast"></div>
-<script>
-const WHATSAPP_NUMBER = "918817861887"; // Replace X with your WhatsApp Business number
-const products=[
-{id:1,name:"OUD MAJESTY",desc:"Royal Oud & Sandalwood",type:"Oud",tone:"tone-1"},
-{id:2,name:"NIGHT OUT",desc:"Bold notes for after dark",type:"Woody",tone:"tone-2"},
-{id:3,name:"SOULMATE",desc:"Soft, warm & romantic",type:"Floral",tone:"tone-3"},
-{id:4,name:"DICTATOR",desc:"Confident. Distinct. Powerful.",type:"Woody",tone:"tone-4"},
-{id:5,name:"AURA",desc:"Fresh notes for every day",type:"Fresh",tone:"tone-5"}
-];
-let cart=[];
-const money=n=>"₹"+n;
-function renderProducts(filter="All"){
-const list=products.filter(p=>filter==="All"||p.type===filter);
-document.getElementById("products").innerHTML=list.map(p=>`
-<article class="product">
-<div class="product-art"><div class="mini-bottle ${p.tone}"></div></div>
-<h3>${p.name}</h3>
-<div class="sub">${p.desc}</div>
-<div class="price" id="price-${p.id}">₹249</div>
-<div class="product-actions">
-<select id="size-${p.id}" onchange="updatePrice(${p.id})">
-<option value="8">8 ml · ₹249</option>
-<option value="20">20 ml · ₹449</option>
-</select>
-<button class="add" onclick="addToCart(${p.id})">ADD +</button>
-</div>
-</article>`).join("");
-}
-function updatePrice(id){
-const size=document.getElementById("size-"+id).value;
-document.getElementById("price-"+id).textContent=money(size==="8"?249:449);
-}
-function filterProducts(type,btn){
-document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));
-btn.classList.add("active");
-renderProducts(type);
-}
-function addToCart(id){
-const p=products.find(x=>x.id===id);
-const size=document.getElementById("size-"+id).value;
-const price=size==="8"?249:449;
-const found=cart.find(x=>x.id===id&&x.size===size);
-if(found)found.qty++;
-else cart.push({id,name:p.name,size,price,qty:1});
-renderCart();
-toast(p.name+" added to bag");
-}
-function changeQty(i,d){
-cart[i].qty+=d;
-if(cart[i].qty<=0)cart.splice(i,1);
-renderCart();
-}
-function renderCart(){
-document.getElementById("count").textContent=cart.reduce((s,x)=>s+x.qty,0);
-document.getElementById("cartItems").innerHTML=cart.length?cart.map((x,i)=>`
-<div class="cart-row">
-<div class="cart-thumb"><div class="mini-bottle"></div></div>
-<div class="cart-info"><strong>${x.name}</strong>${x.size} ml · ${money(x.price)}
-<div class="qty"><button onclick="changeQty(${i},-1)">−</button>${x.qty}<button onclick="changeQty(${i},1)">+</button><span style="margin-left:auto">${money(x.price*x.qty)}</span></div>
-</div>
-</div>`).join(""):'<div class="empty">Your bag is waiting for a little fragrance.</div>';
-document.getElementById("cartTotal").textContent=money(cart.reduce((s,x)=>s+x.price*x.qty,0));
-}
-function toggleCart(){
-document.getElementById("cartPanel").classList.toggle("open");
-}
-function toast(t){
-const el=document.getElementById("toast");
-el.textContent=t;
-el.classList.add("show");
-setTimeout(()=>el.classList.remove("show"),1800);
-}
-function sendOrder(){
-if(!cart.length){toast("Please add a fragrance first");return;}
-const name=document.getElementById("custName").value.trim();
-const phone=document.getElementById("custPhone").value.trim();
-const address=document.getElementById("custAddress").value.trim();
-if(!name||!/^[6-9]\d{9}$/.test(phone)||!address){
-toast("Please enter valid delivery details");return;
-}
-if(WHATSAPP_NUMBER.includes("X")){
-toast("Add your WhatsApp number in website settings first");return;
-}
-const lines=cart.map(x=>`${x.name} - ${x.size} ml x ${x.qty} = ₹${x.price*x.qty}`).join("\n");
-const total=cart.reduce((s,x)=>s+x.price*x.qty,0);
-const msg=`Hello NOXNECTAR! I want to place an order:\n\n${lines}\n\nTotal: ₹${total}\n\nName: ${name}\nMobile: ${phone}\nAddress: ${address}\n\nPlease confirm availability, shipping charges and payment details.`;
-window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg),"_blank");
-}
-document.getElementById("footerWhats").href="https://wa.me/"+WHATSAPP_NUMBER;
-renderProducts();
-renderCart();
-</script>
+
 </body>
 </html>
