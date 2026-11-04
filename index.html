@@ -1,201 +1,292 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NOXNECTAR Perfumes | Luxury Fragrances</title>
-<meta name="description" content="Discover NOXNECTAR signature fragrances.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11100f">
+<title>NOXNECTAR | Customer Account</title>
 <style>
-:root{--bg:#0c0709;--gold:#e7c18a;--cream:#f7e9d5;--muted:#c9b9b0;--line:#55303a}
+:root{--ink:#11100f;--cream:#f3eee5;--muted:#b8afa2;--gold:#c5a574;--line:rgba(197,165,116,.28);--panel:#191715}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--cream);font-family:Georgia,serif}
-a{color:inherit;text-decoration:none}
-.top{text-align:center;background:#310b1c;padding:10px;font:12px Arial;color:#f3d7ad;letter-spacing:1px}
-nav{display:flex;align-items:center;justify-content:space-between;padding:12px 6%;background:#090608;border-bottom:1px solid #29151c;gap:20px}
-nav img{width:145px;height:100px;object-fit:contain}
-nav .links{display:flex;gap:25px;font:14px Arial}
-.hero{min-height:450px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:55px 8%;background:radial-gradient(ellipse at 75% 55%,#57152e,#200b14 45%,#0c0709 76%)}
-.eyebrow{letter-spacing:6px;color:var(--gold);font:12px Arial}
-.hero h1{font-size:clamp(42px,5vw,68px);line-height:1.03;font-weight:400;margin:18px 0}
-.hero p{font:17px/1.6 Arial;color:#e2cdbb}
-.bottle{margin:auto;width:250px;height:300px;border:2px solid #c18b65;border-radius:28px;background:linear-gradient(110deg,#10070b,#4a1028,#14080e);box-shadow:0 0 65px #a43b5b66;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;color:#f4d9b2}
-.bottle:before{content:"";position:absolute;top:-48px;width:95px;height:50px;border:3px solid #d8b078;border-radius:9px;background:linear-gradient(90deg,#6c451e,#f4d49a,#6c451e)}
-.bottle b{font-size:42px}
-.bottle small{letter-spacing:4px;text-align:center}
-.btn{display:inline-block;border-radius:30px;background:linear-gradient(100deg,#bd8a4b,#f3d7a4);color:#1b0c0d;padding:13px 22px;font:bold 13px Arial}
-.features{display:flex;justify-content:space-around;flex-wrap:wrap;gap:15px;padding:20px;background:#13090e;border-block:1px solid var(--line);font:13px Arial;color:#e8d3b5}
-section.products-wrap{padding:55px 4%;text-align:center}
-h2{font-size:34px;font-weight:400;margin:0 0 12px}
-.sub{font:14px Arial;color:var(--muted);margin-bottom:30px}
-.products{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.product{border:1px solid var(--line);border-radius:14px;background:linear-gradient(160deg,#1b0c12,#10090c);padding:14px 10px}
-.visual{height:155px;border-radius:10px;margin-bottom:14px;display:grid;place-items:center;background:radial-gradient(circle,#6d2a3c,#160b10 70%)}
-.mini{width:72px;height:112px;border:2px solid #c9a16d;border-radius:12px;background:linear-gradient(90deg,#09090d,#4c152c,#09090d);box-shadow:0 0 24px #a6536a55;display:grid;place-items:center;color:#e9c98f;font-size:10px;text-align:center}
-.product h3{font-size:17px;color:#f4d8ad;margin:0 0 7px}
-.product p{font:12px Arial;color:var(--muted);min-height:28px}
-.size{font:12px Arial;margin:10px}
-.price{font:bold 22px Arial;margin:8px}
-.product .btn{font-size:11px;padding:10px}
-.notice{font:12px/1.6 Arial;color:#d6bba4;background:#211017;border:1px solid #583044;padding:12px;border-radius:10px;max-width:900px;margin:22px auto}
-.discovery{margin:0 4% 55px;border:1px solid var(--line);border-radius:22px;padding:35px;background:linear-gradient(110deg,#260b19,#10070b);display:flex;align-items:center;justify-content:space-around;gap:25px}
-.discovery .symbol{font-size:55px;color:var(--gold)}
-.discovery p,.about p{font:14px/1.8 Arial;color:var(--muted)}
-.about{text-align:center;background:#13090e;padding:55px 8%;border-block:1px solid var(--line)}
-.about p{max-width:760px;margin:15px auto}
-footer{padding:35px 6%;background:#080507;display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px;font:13px/1.9 Arial;color:#cbbab1}
-footer h3{font:20px Georgia;color:#f0d6b0}
-footer a{display:block}
-.legal{text-align:center;padding:14px;font:11px/1.7 Arial;color:#927f78}
-@media(max-width:850px){
-.products{grid-template-columns:repeat(2,1fr)}
-.hero{grid-template-columns:1fr;text-align:center}
-.hero .bottle{margin-top:60px}
-nav{flex-direction:column}
-nav .links{flex-wrap:wrap;justify-content:center}
-footer{grid-template-columns:1fr 1fr}
-}
-@media(max-width:520px){
-.products{grid-template-columns:1fr 1fr}
-.visual{height:120px}
-.mini{height:90px;width:58px}
-.discovery{flex-direction:column;text-align:center}
-footer{grid-template-columns:1fr}
-}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 15%,#302317 0,#171412 42%,#0d0c0b 100%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;display:flex;flex-direction:column}
+header{border-bottom:1px solid var(--line);background:#11100feF}
+.nav{width:min(1100px,calc(100% - 36px));height:76px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:22px;letter-spacing:.2em;font-weight:bold;color:var(--cream);text-decoration:none}
+.brand span{color:var(--gold)}
+.back{font:11px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+main{width:min(460px,calc(100% - 32px));margin:58px auto;flex:1}
+.eyebrow{text-align:center;color:var(--gold);font:10px Arial,sans-serif;letter-spacing:.32em;text-transform:uppercase}
+.card{margin-top:18px;padding:34px;border:1px solid var(--line);background:linear-gradient(150deg,#211d18,#141210);box-shadow:0 24px 70px #0008}
+.monogram{text-align:center;color:var(--gold);font-size:34px;letter-spacing:.16em;margin-bottom:8px}
+.card h1{text-align:center;font-size:34px;font-weight:normal;margin:8px 0}
+.sub{text-align:center;color:var(--muted);font:13px/1.7 Arial,sans-serif;margin:0 0 24px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px}
+.tab{padding:13px;border:1px solid var(--line);background:transparent;color:var(--muted);font:11px Arial,sans-serif;letter-spacing:.15em;cursor:pointer}
+.tab.active{background:var(--gold);color:#17130e;border-color:var(--gold)}
+label{display:block;margin:14px 0 7px;color:#d8cbb9;font:10px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+input{width:100%;padding:14px 13px;background:#100f0e;border:1px solid #51412d;color:var(--cream);outline:none;font:14px Arial,sans-serif}
+input:focus{border-color:var(--gold)}
+.submit{width:100%;margin-top:22px;padding:16px;background:var(--gold);border:1px solid var(--gold);color:#17130e;font:11px Arial,sans-serif;letter-spacing:.18em;font-weight:bold;cursor:pointer}
+.submit:disabled{opacity:.6;cursor:wait}
+.forgot{display:block;text-align:right;margin-top:13px;color:var(--gold);font:11px Arial,sans-serif;text-decoration:none}
+.msg{display:none;margin-top:16px;padding:12px;border:1px solid var(--line);color:#e7d8c4;font:12px/1.6 Arial,sans-serif;overflow-wrap:anywhere}
+.msg.show{display:block}
+.account{display:none;text-align:center}
+.account.show{display:block}
+.account p{font:13px/1.7 Arial,sans-serif;color:var(--muted)}
+.logout{margin-top:16px;padding:12px 22px;border:1px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;font:11px Arial,sans-serif;letter-spacing:.14em}
+footer{text-align:center;padding:25px;color:#82786d;font:10px Arial,sans-serif;letter-spacing:.12em}
+@media(max-width:480px){.card{padding:25px 20px}.card h1{font-size:29px}main{margin:35px auto}.nav{height:66px}.brand{font-size:18px}}
 </style>
 </head>
 <body>
 
-<div class="top">✦ SIGNATURE FRAGRANCES | PREMIUM PRESENTATION | MADE IN INDIA ✦</div>
-
-<nav>
-<a href="#"><img src="assets/noxnectar-logo.jpg" alt="NOXNECTAR Perfumes"></a>
-<div class="links">
-<a href="#">Home</a>
-<a href="#shop">Shop</a>
-<a href="#discovery">Discovery Box</a>
-<a href="#about">About Us</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
-<header class="hero">
-<div>
-<div class="eyebrow">N O X N E C T A R</div>
-<h1>Luxury Fragrance<br>For Modern You</h1>
-<p>Discover your signature scent. A collection designed to make every moment memorable.</p>
-<a class="btn" href="#shop">Explore Collection →</a>
-</div>
-<div class="bottle">
-<b>Ｎ</b>
-<small>NOXNECTAR<br>PERFUMES</small>
+<header>
+<div class="nav">
+<a class="brand" href="https://noxnectar.in">NOX<span>NECTAR</span></a>
+<a class="back" href="https://noxnectar.in">← Back to store</a>
 </div>
 </header>
 
-<div class="features">
-<span>✧ Signature Fragrances</span>
-<span>✧ Premium Presentation</span>
-<span>✧ Secure Packaging</span>
-<span>✧ India Based Brand</span>
+<main>
+<div class="eyebrow">The NOXNECTAR experience</div>
+
+<section class="card" id="authCard">
+<div class="monogram">N.</div>
+<h1 id="heading">Welcome Back</h1>
+<p class="sub" id="subheading">Sign in to your signature scent journey.</p>
+
+<div class="tabs">
+<button class="tab active" id="loginTab" type="button">LOG IN</button>
+<button class="tab" id="signupTab" type="button">SIGN UP</button>
 </div>
 
-<section class="products-wrap" id="shop">
-<h2>Our Signature Collection</h2>
-<div class="sub">Five unique fragrances. Five distinct personalities. Find your signature scent.</div>
-
-<div class="products">
-
-<div class="product">
-<div class="visual"><div class="mini">NOXNECTAR<br>OUD</div></div>
-<h3>OUD MAJESTY</h3>
-<p>Oud • Sandalwood • Royal</p>
-<div class="size">100 ml</div>
-<div class="price">₹999</div>
-<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20OUD%20MAJESTY">Enquire on WhatsApp</a>
+<form id="authForm">
+<div id="nameWrap" hidden>
+<label for="name">Full name</label>
+<input id="name" type="text" autocomplete="name" maxlength="80" placeholder="Your full name">
 </div>
 
-<div class="product">
-<div class="visual" style="background:radial-gradient(circle,#17354c,#10090c 70%)"><div class="mini">NOXNECTAR<br>NIGHT</div></div>
-<h3>NIGHT OUT</h3>
-<p>Fresh • Spicy • Party Wear</p>
-<div class="size">100 ml</div>
-<div class="price">₹999</div>
-<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20NIGHT%20OUT">Enquire on WhatsApp</a>
-</div>
+<label for="email">Email address</label>
+<input id="email" type="email" autocomplete="email" required maxlength="120" placeholder="you@example.com">
 
-<div class="product">
-<div class="visual" style="background:radial-gradient(circle,#70203b,#10090c 70%)"><div class="mini">NOXNECTAR<br>LOVE</div></div>
-<h3>SOULMATE</h3>
-<p>Romantic • Floral • Seductive</p>
-<div class="size">100 ml</div>
-<div class="price">₹999</div>
-<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20SOULMATE">Enquire on WhatsApp</a>
-</div>
+<label for="password">Password</label>
+<input id="password" type="password" autocomplete="current-password" required minlength="6" maxlength="80" placeholder="At least 6 characters">
 
-<div class="product">
-<div class="visual" style="background:radial-gradient(circle,#34404a,#10090c 70%)"><div class="mini">NOXNECTAR<br>NOIR</div></div>
-<h3>DICTATOR</h3>
-<p>Bold • Woody • Confident</p>
-<div class="size">100 ml</div>
-<div class="price">₹999</div>
-<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20DICTATOR">Enquire on WhatsApp</a>
-</div>
+<a class="forgot" href="#" id="forgot">Forgot password?</a>
 
-<div class="product">
-<div class="visual" style="background:radial-gradient(circle,#27482c,#10090c 70%)"><div class="mini">NOXNECTAR<br>AURA</div></div>
-<h3>AURA</h3>
-<p>Fresh • Clean • Everyday</p>
-<div class="size">100 ml</div>
-<div class="price">₹999</div>
-<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20AURA">Enquire on WhatsApp</a>
-</div>
+<button class="submit" id="submitBtn" type="submit">LOG IN</button>
+</form>
 
-</div>
-
-<div class="notice">
-Online checkout and UPI/card payments are not enabled yet. Product enquiries are handled through WhatsApp while payment-gateway approval is pending.
-</div>
+<div class="msg" id="message" role="status" aria-live="polite"></div>
 </section>
 
-<section class="discovery" id="discovery">
-<div class="symbol">✦ ✦ ✦</div>
-<div>
-<div class="eyebrow">DISCOVERY BOX</div>
-<h2>Try All 5 Fragrances</h2>
-<p>NOXNECTAR Discovery Box · 5 × 8 ml<br>Ask us for current availability and pricing.</p>
-<a class="btn" href="https://wa.me/918817861887?text=Interested%20in%20the%20NOXNECTAR%20Discovery%20Box">Enquire Now →</a>
-</div>
+<section class="card account" id="accountCard">
+<div class="monogram">N.</div>
+<h1>Your Account</h1>
+<p id="welcome"></p>
+<p>You are signed in to NOXNECTAR.</p>
+<button class="logout" id="logoutBtn" type="button">LOG OUT</button>
 </section>
+</main>
 
-<section class="about" id="about">
-<h2>About NOXNECTAR</h2>
-<p>NOXNECTAR is a fragrance brand built around expressive scents, refined presentation and accessible luxury. Explore the collection and contact our team for product details, availability and ordering assistance.</p>
-</section>
+<footer>© <span id="year"></span> NOXNECTAR · AN EXPRESSION OF SCENT, STYLE AND PRESENCE</footer>
 
-<footer id="contact">
-<div>
-<h3>NOXNECTAR PERFUMES</h3>
-<p>Luxury fragrance for modern you.<br>Brand enquiries and order assistance.</p>
-</div>
-<div>
-<h3>Explore</h3>
-<a href="#shop">Shop</a>
-<a href="#discovery">Discovery Box</a>
-<a href="#about">About Us</a>
-</div>
-<div>
-<h3>Contact</h3>
-<a href="https://wa.me/918817861887">WhatsApp: +91 88178 61887</a>
-<a href="mailto:contact@noxnectar.in">contact@noxnectar.in</a>
-</div>
-</footer>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 
-<div class="legal">
-© 2026 NOXNECTAR Perfumes. All rights reserved.<br>
-Terms & Conditions · Privacy Policy · Shipping Policy · Cancellation & Refund Policy<br>
-Catalogue and enquiry website. Product availability and prices are confirmed before order acceptance. Complete accurate legal disclosures and policies before enabling online payments.
-</div>
+import {
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+sendPasswordResetEmail,
+onAuthStateChanged,
+updateProfile,
+signOut
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+
+import {
+getFirestore,
+doc,
+setDoc,
+serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "PASTE_FIREBASE_API_KEY",
+authDomain: "PASTE_FIREBASE_AUTH_DOMAIN",
+projectId: "noxnectar-15843",
+storageBucket: "PASTE_FIREBASE_STORAGE_BUCKET",
+messagingSenderId: "PASTE_FIREBASE_MESSAGING_SENDER_ID",
+appId: "PASTE_FIREBASE_APP_ID"
+};
+
+const $ = id => document.getElementById(id);
+
+$("year").textContent = new Date().getFullYear();
+
+let mode = "login";
+let auth, db;
+
+const configReady = Object.values(firebaseConfig).every(
+v => typeof v === "string" && v.length && !v.startsWith("PASTE_")
+);
+
+function message(text, error=false) {
+const el = $("message");
+el.textContent = text;
+el.style.borderColor = error ? "#a85b50" : "var(--line)";
+el.classList.add("show");
+}
+
+function setMode(next) {
+mode = next;
+
+$("loginTab").classList.toggle("active", mode === "login");
+$("signupTab").classList.toggle("active", mode === "signup");
+
+$("nameWrap").hidden = mode !== "signup";
+$("name").required = mode === "signup";
+
+$("heading").textContent = mode === "login" ? "Welcome Back" : "Create Your Account";
+
+$("subheading").textContent = mode === "login"
+? "Sign in to your signature scent journey."
+: "Join NOXNECTAR and discover your signature.";
+
+$("submitBtn").textContent = mode === "login" ? "LOG IN" : "CREATE ACCOUNT";
+
+$("forgot").hidden = mode === "signup";
+
+$("password").autocomplete = mode === "login"
+? "current-password"
+: "new-password";
+
+$("message").classList.remove("show");
+}
+
+$("loginTab").addEventListener("click", () => setMode("login"));
+$("signupTab").addEventListener("click", () => setMode("signup"));
+
+$("forgot").addEventListener("click", async e => {
+e.preventDefault();
+
+if (!configReady) {
+message("Firebase setup is not complete. Add the Firebase Web App configuration first.", true);
+return;
+}
+
+const email = $("email").value.trim();
+
+if (!email) {
+message("Enter your email address first.", true);
+return;
+}
+
+try {
+await sendPasswordResetEmail(auth, email);
+message("Password reset email sent. Please check your inbox.");
+} catch(err) {
+message(err.message, true);
+}
+});
+
+$("authForm").addEventListener("submit", async e => {
+e.preventDefault();
+
+if (!configReady) {
+message("Firebase setup is not complete. Add the Firebase Web App configuration before using customer accounts.", true);
+return;
+}
+
+const email = $("email").value.trim();
+const password = $("password").value;
+const name = $("name").value.trim();
+
+$("submitBtn").disabled = true;
+
+try {
+
+if (mode === "signup") {
+
+if (!name) throw new Error("Please enter your full name.");
+
+const cred = await createUserWithEmailAndPassword(auth, email, password);
+
+await updateProfile(cred.user, {
+displayName: name
+});
+
+await setDoc(doc(db, "userProfiles", cred.user.uid), {
+uid: cred.user.uid,
+name,
+email,
+role: "customer",
+createdAt: serverTimestamp()
+}, { merge: true });
+
+message("Account created successfully. Welcome to NOXNECTAR.");
+
+} else {
+
+await signInWithEmailAndPassword(auth, email, password);
+
+message("Login successful.");
+
+}
+
+} catch(err) {
+
+const friendly = {
+"auth/email-already-in-use": "This email is already registered. Please log in.",
+"auth/invalid-email": "Please enter a valid email address.",
+"auth/weak-password": "Password must be at least 6 characters.",
+"auth/invalid-credential": "Email or password is incorrect.",
+"auth/too-many-requests": "Too many attempts. Please try again later."
+};
+
+message(friendly[err.code] || err.message, true);
+
+} finally {
+$("submitBtn").disabled = false;
+}
+});
+
+$("logoutBtn").addEventListener("click", async () => {
+if (auth) await signOut(auth);
+});
+
+if (configReady) {
+
+const app = initializeApp(firebaseConfig);
+
+auth = getAuth(app);
+db = getFirestore(app);
+
+onAuthStateChanged(auth, user => {
+
+if (user) {
+
+$("authCard").style.display = "none";
+$("accountCard").classList.add("show");
+
+$("welcome").textContent = `Welcome, ${user.displayName || user.email}`;
+
+} else {
+
+$("authCard").style.display = "block";
+$("accountCard").classList.remove("show");
+
+}
+
+});
+
+} else {
+
+message("Page design is ready. Firebase Web App configuration is still required to activate real login and signup.");
+
+}
+</script>
 
 </body>
 </html>
