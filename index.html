@@ -5,296 +5,579 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#11100f">
 <title>NOXNECTAR | Customer Account</title>
+
 <style>
-:root{--ink:#11100f;--cream:#f3eee5;--muted:#b8afa2;--gold:#c5a574;--line:rgba(197,165,116,.28);--panel:#191715}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 15%,#302317 0,#171412 42%,#0d0c0b 100%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;display:flex;flex-direction:column}
-header{border-bottom:1px solid var(--line);background:#11100feF}
-.nav{width:min(1100px,calc(100% - 36px));height:76px;margin:auto;display:flex;align-items:center;justify-content:space-between}
-.brand{font-size:22px;letter-spacing:.2em;font-weight:bold;color:var(--cream);text-decoration:none}
-.brand span{color:var(--gold)}
-.back{font:11px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none}
-main{width:min(460px,calc(100% - 32px));margin:58px auto;flex:1}
-.eyebrow{text-align:center;color:var(--gold);font:10px Arial,sans-serif;letter-spacing:.32em;text-transform:uppercase}
-.card{margin-top:18px;padding:34px;border:1px solid var(--line);background:linear-gradient(150deg,#211d18,#141210);box-shadow:0 24px 70px #0008}
-.monogram{text-align:center;color:var(--gold);font-size:34px;letter-spacing:.16em;margin-bottom:8px}
-.card h1{text-align:center;font-size:34px;font-weight:normal;margin:8px 0}
-.sub{text-align:center;color:var(--muted);font:13px/1.7 Arial,sans-serif;margin:0 0 24px}
-.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px}
-.tab{padding:13px;border:1px solid var(--line);background:transparent;color:var(--muted);font:11px Arial,sans-serif;letter-spacing:.15em;cursor:pointer}
-.tab.active{background:var(--gold);color:#17130e;border-color:var(--gold)}
-label{display:block;margin:14px 0 7px;color:#d8cbb9;font:10px Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase}
-input{width:100%;padding:14px 13px;background:#100f0e;border:1px solid #51412d;color:var(--cream);outline:none;font:14px Arial,sans-serif}
-input:focus{border-color:var(--gold)}
-.submit{width:100%;margin-top:22px;padding:16px;background:var(--gold);border:1px solid var(--gold);color:#17130e;font:11px Arial,sans-serif;letter-spacing:.18em;font-weight:bold;cursor:pointer}
-.submit:disabled{opacity:.6;cursor:wait}
-.forgot{display:block;text-align:right;margin-top:13px;color:var(--gold);font:11px Arial,sans-serif;text-decoration:none}
-.msg{display:none;margin-top:16px;padding:12px;border:1px solid var(--line);color:#e7d8c4;font:12px/1.6 Arial,sans-serif;overflow-wrap:anywhere}
-.msg.show{display:block}
-.account{display:none;text-align:center}
-.account.show{display:block}
-.account p{font:13px/1.7 Arial,sans-serif;color:var(--muted)}
-.logout{margin-top:16px;padding:12px 22px;border:1px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;font:11px Arial,sans-serif;letter-spacing:.14em}
-footer{text-align:center;padding:25px;color:#82786d;font:10px Arial,sans-serif;letter-spacing:.12em}
-@media(max-width:480px){.card{padding:25px 20px}.card h1{font-size:29px}main{margin:35px auto}.nav{height:66px}.brand{font-size:18px}}
+:root {
+  --cream:#f3eee5;
+  --muted:#b8afa2;
+  --gold:#c5a574;
+  --line:rgba(197,165,116,.28);
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  min-height:100vh;
+  background:radial-gradient(ellipse at 50% 15%,#302317,#171412 42%,#0d0c0b);
+  color:var(--cream);
+  font-family:Georgia,'Times New Roman',serif;
+  display:flex;
+  flex-direction:column;
+}
+
+header {
+  border-bottom:1px solid var(--line);
+  background:#11100f;
+}
+
+.nav {
+  width:min(1100px,calc(100% - 36px));
+  height:76px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand {
+  font-size:22px;
+  letter-spacing:.2em;
+  font-weight:bold;
+  color:var(--cream);
+  text-decoration:none;
+}
+
+.brand span { color:var(--gold); }
+
+.back {
+  font:11px Arial,sans-serif;
+  letter-spacing:.12em;
+  color:var(--gold);
+  text-decoration:none;
+}
+
+main {
+  width:min(460px,calc(100% - 32px));
+  margin:58px auto;
+  flex:1;
+}
+
+.eyebrow {
+  text-align:center;
+  color:var(--gold);
+  font:10px Arial,sans-serif;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+}
+
+.card {
+  margin-top:18px;
+  padding:34px;
+  border:1px solid var(--line);
+  background:linear-gradient(150deg,#211d18,#141210);
+  box-shadow:0 24px 70px #0008;
+}
+
+.monogram {
+  text-align:center;
+  color:var(--gold);
+  font-size:34px;
+  letter-spacing:.16em;
+}
+
+h1 {
+  text-align:center;
+  font-size:34px;
+  font-weight:normal;
+  margin:8px 0;
+}
+
+.sub {
+  text-align:center;
+  color:var(--muted);
+  font:13px/1.7 Arial,sans-serif;
+  margin-bottom:24px;
+}
+
+.tabs {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:22px;
+}
+
+.tab {
+  padding:13px;
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--muted);
+  cursor:pointer;
+  font:11px Arial,sans-serif;
+  letter-spacing:.15em;
+}
+
+.tab.active {
+  background:var(--gold);
+  color:#17130e;
+}
+
+label {
+  display:block;
+  margin:14px 0 7px;
+  color:#d8cbb9;
+  font:10px Arial,sans-serif;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+input {
+  width:100%;
+  padding:14px 13px;
+  background:#100f0e;
+  border:1px solid #51412d;
+  color:var(--cream);
+  outline:none;
+  font:14px Arial,sans-serif;
+}
+
+input:focus { border-color:var(--gold); }
+
+.submit {
+  width:100%;
+  margin-top:22px;
+  padding:16px;
+  background:var(--gold);
+  border:1px solid var(--gold);
+  color:#17130e;
+  font:11px Arial,sans-serif;
+  letter-spacing:.18em;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.submit:disabled {
+  opacity:.6;
+  cursor:wait;
+}
+
+.forgot {
+  display:block;
+  text-align:right;
+  margin-top:13px;
+  color:var(--gold);
+  font:11px Arial,sans-serif;
+  text-decoration:none;
+}
+
+.msg {
+  display:none;
+  margin-top:16px;
+  padding:12px;
+  border:1px solid var(--line);
+  color:#e7d8c4;
+  font:12px/1.6 Arial,sans-serif;
+  overflow-wrap:anywhere;
+}
+
+.msg.show { display:block; }
+
+.account {
+  display:none;
+  text-align:center;
+}
+
+.account.show { display:block; }
+
+.account p {
+  font:13px/1.7 Arial,sans-serif;
+  color:var(--muted);
+}
+
+.logout {
+  margin-top:16px;
+  padding:12px 22px;
+  border:1px solid var(--gold);
+  background:transparent;
+  color:var(--gold);
+  cursor:pointer;
+}
+
+footer {
+  text-align:center;
+  padding:25px;
+  color:#82786d;
+  font:10px Arial,sans-serif;
+  letter-spacing:.12em;
+}
+
+@media(max-width:480px) {
+  .card { padding:25px 20px; }
+  h1 { font-size:29px; }
+  main { margin:35px auto; }
+  .nav { height:66px; }
+  .brand { font-size:18px; }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="nav">
-<a class="brand" href="https://noxnectar.in">NOX<span>NECTAR</span></a>
-<a class="back" href="https://noxnectar.in">← Back to store</a>
-</div>
+  <div class="nav">
+    <a class="brand" href="https://noxnectar.in">
+      NOX<span>NECTAR</span>
+    </a>
+    <a class="back" href="https://noxnectar.in">
+      ← Back to store
+    </a>
+  </div>
 </header>
 
 <main>
-<div class="eyebrow">The NOXNECTAR experience</div>
 
-<section class="card" id="authCard">
-<div class="monogram">N.</div>
-<h1 id="heading">Welcome Back</h1>
-<p class="sub" id="subheading">Sign in to your signature scent journey.</p>
+  <div class="eyebrow">The NOXNECTAR Experience</div>
 
-<div class="tabs">
-<button class="tab active" id="loginTab" type="button">LOG IN</button>
-<button class="tab" id="signupTab" type="button">SIGN UP</button>
-</div>
+  <section class="card" id="authCard">
 
-<form id="authForm">
-<div id="nameWrap" hidden>
-<label for="name">Full name</label>
-<input id="name" type="text" autocomplete="name" maxlength="80" placeholder="Your full name">
-</div>
+    <div class="monogram">N.</div>
 
-<label for="email">Email address</label>
-<input id="email" type="email" autocomplete="email" required maxlength="120" placeholder="you@example.com">
+    <h1 id="heading">Welcome Back</h1>
 
-<label for="password">Password</label>
-<input id="password" type="password" autocomplete="current-password" required minlength="6" maxlength="80" placeholder="At least 6 characters">
+    <p class="sub" id="subheading">
+      Sign in to your signature scent journey.
+    </p>
 
-<a class="forgot" href="#" id="forgot">Forgot password?</a>
+    <div class="tabs">
+      <button class="tab active" id="loginTab" type="button">
+        LOG IN
+      </button>
 
-<button class="submit" id="submitBtn" type="submit">LOG IN</button>
-</form>
+      <button class="tab" id="signupTab" type="button">
+        SIGN UP
+      </button>
+    </div>
 
-<div class="msg" id="message" role="status" aria-live="polite"></div>
-</section>
+    <form id="authForm">
 
-<section class="card account" id="accountCard">
-<div class="monogram">N.</div>
-<h1>Your Account</h1>
-<p id="welcome"></p>
-<p>You are signed in to NOXNECTAR.</p>
-<button class="logout" id="logoutBtn" type="button">LOG OUT</button>
-</section>
+      <div id="nameWrap" hidden>
+        <label for="name">Full Name</label>
+        <input
+          id="name"
+          type="text"
+          autocomplete="name"
+          maxlength="80"
+          placeholder="Your full name">
+      </div>
+
+      <label for="email">Email Address</label>
+      <input
+        id="email"
+        type="email"
+        autocomplete="email"
+        required
+        maxlength="120"
+        placeholder="you@example.com">
+
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        autocomplete="current-password"
+        required
+        minlength="6"
+        maxlength="80"
+        placeholder="At least 6 characters">
+
+      <a class="forgot" href="#" id="forgot">
+        Forgot password?
+      </a>
+
+      <button class="submit" id="submitBtn" type="submit">
+        LOG IN
+      </button>
+
+    </form>
+
+    <div class="msg" id="message" role="status" aria-live="polite"></div>
+
+  </section>
+
+  <section class="card account" id="accountCard">
+
+    <div class="monogram">N.</div>
+
+    <h1>Your Account</h1>
+
+    <p id="welcome"></p>
+
+    <p>You are signed in to NOXNECTAR.</p>
+
+    <button class="logout" id="logoutBtn" type="button">
+      LOG OUT
+    </button>
+
+  </section>
+
 </main>
 
-<footer>© <span id="year"></span> NOXNECTAR · AN EXPRESSION OF SCENT, STYLE AND PRESENCE</footer>
+<footer>
+  © <span id="year"></span> NOXNECTAR
+  · AN EXPRESSION OF SCENT, STYLE AND PRESENCE
+</footer>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+
+import { initializeApp } from
+"https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
 
 import {
-getAuth,
-createUserWithEmailAndPassword,
-signInWithEmailAndPassword,
-sendPasswordResetEmail,
-onAuthStateChanged,
-updateProfile,
-signOut
-} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  onAuthStateChanged,
+  updateProfile,
+  signOut
+} from
+"https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 import {
-getFirestore,
-doc,
-setDoc,
-serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+  getFirestore,
+  doc,
+  setDoc,
+  serverTimestamp
+} from
+"https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+
+// FIREBASE CONFIGURATION
 
 const firebaseConfig = {
-apiKey: "PASTE_FIREBASE_API_KEY",
-authDomain: "PASTE_FIREBASE_AUTH_DOMAIN",
-projectId: "noxnectar-15843",
-storageBucket: "PASTE_FIREBASE_STORAGE_BUCKET",
-messagingSenderId: "PASTE_FIREBASE_MESSAGING_SENDER_ID",
-appId: "PASTE_FIREBASE_APP_ID"
-};
-
-const $ = id => document.getElementById(id);
-
-$("year").textContent = new Date().getFullYear();
-
-let mode = "login";
-let auth, db;
-
-const configReady = Object.values(firebaseConfig).every(
-v => typeof v === "string" && v.length && !v.startsWith("PASTE_")
-);
-
-function message(text, error=false) {
-const el = $("message");
-el.textContent = text;
-el.style.borderColor = error ? "#a85b50" : "var(--line)";
-el.classList.add("show");
-}
-
-function setMode(next) {
-mode = next;
-
-$("loginTab").classList.toggle("active", mode === "login");
-$("signupTab").classList.toggle("active", mode === "signup");
-
-$("nameWrap").hidden = mode !== "signup";
-$("name").required = mode === "signup";
-
-$("heading").textContent = mode === "login" ? "Welcome Back" : "Create Your Account";
-
-$("subheading").textContent = mode === "login"
-? "Sign in to your signature scent journey."
-: "Join NOXNECTAR and discover your signature.";
-
-$("submitBtn").textContent = mode === "login" ? "LOG IN" : "CREATE ACCOUNT";
-
-$("forgot").hidden = mode === "signup";
-
-$("password").autocomplete = mode === "login"
-? "current-password"
-: "new-password";
-
-$("message").classList.remove("show");
-}
-
-$("loginTab").addEventListener("click", () => setMode("login"));
-$("signupTab").addEventListener("click", () => setMode("signup"));
-
-$("forgot").addEventListener("click", async e => {
-e.preventDefault();
-
-if (!configReady) {
-message("Firebase setup is not complete. Add the Firebase Web App configuration first.", true);
-return;
-}
-
-const email = $("email").value.trim();
-
-if (!email) {
-message("Enter your email address first.", true);
-return;
-}
-
-try {
-await sendPasswordResetEmail(auth, email);
-message("Password reset email sent. Please check your inbox.");
-} catch(err) {
-message(err.message, true);
-}
-});
-
-$("authForm").addEventListener("submit", async e => {
-e.preventDefault();
-
-if (!configReady) {
-message("Firebase setup is not complete. Add the Firebase Web App configuration before using customer accounts.", true);
-return;
-}
-
-const email = $("email").value.trim();
-const password = $("password").value;
-const name = $("name").value.trim();
-
-$("submitBtn").disabled = true;
-
-try {
-
-if (mode === "signup") {
-
-if (!name) throw new Error("Please enter your full name.");
-
-const cred = await createUserWithEmailAndPassword(auth, email, password);
-
-await updateProfile(cred.user, {
-displayName: name
-});
-
-await setDoc(doc(db, "userProfiles", cred.user.uid), {
-uid: cred.user.uid,
-name,
-email,
-role: "customer",
-createdAt: serverTimestamp()
-}, { merge: true });
-
-message("Account created successfully. Welcome to NOXNECTAR.");
-
-} else {
-
-await signInWithEmailAndPassword(auth, email, password);
-
-message("Login successful.");
-
-}
-
-} catch(err) {
-
-const friendly = {
-"auth/email-already-in-use": "This email is already registered. Please log in.",
-"auth/invalid-email": "Please enter a valid email address.",
-"auth/weak-password": "Password must be at least 6 characters.",
-"auth/invalid-credential": "Email or password is incorrect.",
-"auth/too-many-requests": "Too many attempts. Please try again later."
-};
-
-message(friendly[err.code] || err.message, true);
-
-} finally {
-$("submitBtn").disabled = false;
-}
-});
-
-$("logoutBtn").addEventListener("click", async () => {
-if (auth) await signOut(auth);
-});
-
-if (configReady) {
-
-const app = initializeApp(firebaseConfig);
-
-auth = getAuth(app);
-db = getFirestore(app);
-
-onAuthStateChanged(auth, user => {
-
-if (user) {
-
-$("authCard").style.display = "none";
-$("accountCard").classList.add("show");
-
-$("welcome").textContent = `Welcome, ${user.displayName || user.email}`;
-
-} else {
-
-$("authCard").style.display = "block";
-$("accountCard").classList.remove("show");
-
-}
-
-});
-
-} else {
-
-message("Page design is ready. Firebase Web App configuration is still required to activate real login and signup.");
-
-}
-</script>
-
-</body>
-</html>
-const firebaseConfig = {
-  apiKey: "AIzaSyDJkZKzhCKstab79-Z-gQoF8qGWRYqbdjw",
+  apiKey: "AIzaSyDJkKZzhCKstab79-Z-gQoF8qGWRYqbdjw",
   authDomain: "noxnectar-15843.firebaseapp.com",
   projectId: "noxnectar-15843",
   storageBucket: "noxnectar-15843.firebasestorage.app",
   messagingSenderId: "871145472013",
   appId: "1:871145472013:web:c753cc4751b880d1e2d544"
 };
+
+
+// INITIALIZE FIREBASE
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const $ = id => document.getElementById(id);
+
+$("year").textContent = new Date().getFullYear();
+
+let mode = "login";
+
+
+// SHOW MESSAGE
+
+function showMessage(text, error = false) {
+  const el = $("message");
+  el.textContent = text;
+  el.style.borderColor = error ? "#a85b50" : "var(--line)";
+  el.classList.add("show");
+}
+
+
+// LOGIN / SIGNUP MODE
+
+function setMode(next) {
+
+  mode = next;
+
+  $("loginTab").classList.toggle("active", mode === "login");
+  $("signupTab").classList.toggle("active", mode === "signup");
+
+  $("nameWrap").hidden = mode !== "signup";
+  $("name").required = mode === "signup";
+
+  $("heading").textContent =
+    mode === "login" ? "Welcome Back" : "Create Your Account";
+
+  $("subheading").textContent =
+    mode === "login"
+      ? "Sign in to your signature scent journey."
+      : "Join NOXNECTAR and discover your signature.";
+
+  $("submitBtn").textContent =
+    mode === "login" ? "LOG IN" : "CREATE ACCOUNT";
+
+  $("forgot").hidden = mode === "signup";
+
+  $("password").autocomplete =
+    mode === "login" ? "current-password" : "new-password";
+
+  $("message").classList.remove("show");
+}
+
+$("loginTab").addEventListener("click", () => setMode("login"));
+$("signupTab").addEventListener("click", () => setMode("signup"));
+
+
+// FORGOT PASSWORD
+
+$("forgot").addEventListener("click", async e => {
+
+  e.preventDefault();
+
+  const email = $("email").value.trim();
+
+  if (!email) {
+    showMessage("Please enter your email address first.", true);
+    return;
+  }
+
+  try {
+
+    await sendPasswordResetEmail(auth, email);
+
+    showMessage("Password reset email sent. Please check your inbox.");
+
+  } catch (err) {
+
+    showMessage(err.message, true);
+
+  }
+
+});
+
+
+// LOGIN AND SIGNUP
+
+$("authForm").addEventListener("submit", async e => {
+
+  e.preventDefault();
+
+  const email = $("email").value.trim();
+  const password = $("password").value;
+  const name = $("name").value.trim();
+
+  $("submitBtn").disabled = true;
+
+  try {
+
+    if (mode === "signup") {
+
+      if (!name) {
+        throw new Error("Please enter your full name.");
+      }
+
+      const cred = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      await updateProfile(cred.user, {
+        displayName: name
+      });
+
+      await setDoc(
+        doc(db, "userProfiles", cred.user.uid),
+        {
+          uid: cred.user.uid,
+          name: name,
+          email: email,
+          role: "customer",
+          createdAt: serverTimestamp()
+        },
+        { merge: true }
+      );
+
+      showMessage("Account created successfully. Welcome to NOXNECTAR.");
+
+    } else {
+
+      await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      showMessage("Login successful.");
+
+    }
+
+  } catch (err) {
+
+    const friendly = {
+
+      "auth/email-already-in-use":
+        "This email is already registered. Please log in.",
+
+      "auth/invalid-email":
+        "Please enter a valid email address.",
+
+      "auth/weak-password":
+        "Password must be at least 6 characters.",
+
+      "auth/invalid-credential":
+        "Email or password is incorrect.",
+
+      "auth/too-many-requests":
+        "Too many attempts. Please try again later.",
+
+      "permission-denied":
+        "Account created, but profile saving failed. Please contact support."
+
+    };
+
+    showMessage(
+      friendly[err.code] || err.message,
+      true
+    );
+
+  } finally {
+
+    $("submitBtn").disabled = false;
+
+  }
+
+});
+
+
+// LOGOUT
+
+$("logoutBtn").addEventListener("click", async () => {
+
+  try {
+    await signOut(auth);
+  } catch (err) {
+    showMessage(err.message, true);
+  }
+
+});
+
+
+// CHECK CUSTOMER LOGIN STATUS
+
+onAuthStateChanged(auth, user => {
+
+  if (user) {
+
+    $("authCard").style.display = "none";
+    $("accountCard").classList.add("show");
+
+    $("welcome").textContent =
+      `Welcome, ${user.displayName || user.email}`;
+
+  } else {
+
+    $("authCard").style.display = "block";
+    $("accountCard").classList.remove("show");
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
