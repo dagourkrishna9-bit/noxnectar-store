@@ -379,7 +379,7 @@ A collection designed to make every moment memorable.
 Five unique fragrances. Five distinct personalities. Find your signature scent.
 </div>
 
-<div class="products">
+<div class="products" id="productsGrid">
 
 <div class="product">
 <div class="visual">
@@ -510,5 +510,78 @@ Terms & Conditions · Privacy Policy · Shipping Policy · Cancellation & Refund
 Catalogue and enquiry website. Product availability and prices are confirmed before order acceptance. Complete accurate legal disclosures and policies before enabling online payments.
 </div>
 
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
+import { getFirestore, collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { firebaseConfig } from './firebase-config.js';
+
+const grid = document.getElementById('productsGrid');
+const initialCatalogue = grid.innerHTML;
+const whatsappNumber = '918817861887';
+const notice = document.querySelector('.notice');
+
+function element(tag, className, value) {
+  const el = document.createElement(tag);
+  if (className) el.className = className;
+  if (value !== undefined) el.textContent = String(value);
+  return el;
+}
+function drawProducts(products) {
+  grid.replaceChildren();
+  const visible = products.filter(p => p.visible !== false);
+  if (!visible.length) {
+    grid.append(element('p', 'sub', 'No fragrances are currently available. Please check back soon.'));
+    return;
+  }
+  for (const p of visible) {
+    const card = element('div', 'product');
+    const visual = element('div', 'visual');
+    if (typeof p.imageUrl === 'string' && /^https:\/\//i.test(p.imageUrl)) {
+      const img = document.createElement('img');
+      img.src = p.imageUrl;
+      img.alt = p.name || 'NOXNECTAR perfume';
+      img.loading = 'lazy';
+      img.style.cssText = 'max-width:100%;height:100%;object-fit:contain;border-radius:10px';
+      visual.append(img);
+    } else {
+      visual.append(element('div', 'mini', 'NOXNECTAR\n' + (p.name || 'PERFUME')));
+    }
+    card.append(visual);
+    card.append(element('h3', '', p.name || 'NOXNECTAR Fragrance'));
+    card.append(element('p', '', p.description || 'Signature fragrance'));
+    card.append(element('div', 'size', p.size || '100 ml'));
+    const price = Number(p.price);
+    card.append(element('div', 'price', Number.isFinite(price) ? '₹' + price.toLocaleString('en-IN') : 'Price on request'));
+    const stock = Number(p.stock);
+    const available = p.inStock !== false && (!Number.isFinite(stock) || stock > 0);
+    if (available) {
+      const a = element('a', 'btn', 'Enquire on WhatsApp');
+      a.href = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent('Interested in ' + (p.name || 'NOXNECTAR perfume'));
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      card.append(a);
+    } else {
+      card.append(element('div', 'muted', 'Currently unavailable'));
+    }
+    grid.append(card);
+  }
+}
+try {
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  onSnapshot(collection(db, 'products'), snapshot => {
+    if (snapshot.empty) {
+      grid.innerHTML = initialCatalogue; // Show original five perfumes until products are added in admin.
+      return;
+    }
+    drawProducts(snapshot.docs.map(doc => doc.data()));
+  }, error => {
+    console.error('NOXNECTAR product sync failed:', error);
+    if (notice) notice.textContent = 'Live catalogue is temporarily unavailable. Please contact us on WhatsApp for current availability.';
+  });
+} catch (error) {
+  console.error('NOXNECTAR Firebase initialization failed:', error);
+}
+</script>
 </body>
 </html>
